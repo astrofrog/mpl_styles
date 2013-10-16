@@ -54,6 +54,16 @@ or make use of the context manager to temporarily change the style:
         ax = fig.add_subplot(1,1,1)
         ...
 
+Available styles
+----------------
+
+The following styles are currently available:
+
+* ``'test'`` - a test style
+
+This package is under development. We are curerntly working on a set of styles!
+Please also contribute your own! (see *Contributing* above).
+
 Other useful helpers
 --------------------
 
