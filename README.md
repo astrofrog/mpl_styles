@@ -42,19 +42,29 @@ or make use of the context manager to temporarily change the style:
 Other useful helpers
 --------------------
 
-The default log formatter is Matplotlib is sub-optimal - it returns values such
+The default log formatter is Matplotlib is sub-optimal = it returns values such
 as 10^0, 10^1, etc. To use a more sensible log formatter, you can do:
 
-from mpl_styles.formatters import LogFormatterMathtextAuto
+    from mpl_styles.formatters import LogFormatterMathtextAuto
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
-    ax.yaxis.set_major_formatter(LogFormatterMathtextAuto())
+    ax.xaxis.set_major_formatter(LogFormatterMathtextAuto())  # for the x axis
+    ax.yaxis.set_major_formatter(LogFormatterMathtextAuto())  # for the y axis
     ...
 
 and values between (and including) 0.01 and 100 will be rendered in decimal,
-not exponential notation.
+not exponential notation. If you use the interactive pylab interface, you need to instead make the plot and then:
 
+    ...
+    from mpl_styles.formatters import LogFormatterMathtextAuto
+    gca().xaxis.set_major_formatter(LogFormatterMathtextAuto())  # for the x axis
+    gca().yaxis.set_major_formatter(LogFormatterMathtextAuto())  # for the y axis
+    gcf().canvas.draw()
+
+If you make a plot with multiple subplots, you will need to run the
+``gca()...`` command after making each sub-plot, and the
+``gcf().canvas.draw()`` command after you are done setting all the formatters.
 
 Credits
 -------
