@@ -59,8 +59,13 @@ Available styles
 
 The following styles are currently available:
 
-* ``'test'`` - a test style
+* ``'test'`` - a test style:
+
+![test](test.png)
+
 * ``'white_on_black'`` - a style for presentations with black backgrounds
+
+![white_on_black](white_on_black.png)
 
 This package is under development. We are curerntly working on a set of styles!
 Please also contribute your own! (see *Contributing* above).
