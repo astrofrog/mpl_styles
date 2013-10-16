@@ -42,6 +42,8 @@ or make use of the context manager to temporarily change the style:
 Other useful helpers
 --------------------
 
+### Improved Log Formatter
+
 The default log formatter is Matplotlib is sub-optimal = it returns values such
 as 10^0, 10^1, etc. To use a more sensible log formatter, you can do:
 
