@@ -1,7 +1,22 @@
 About
 -----
 
-A collection of pre-defined matplotlib styles.
+The purpose of this package is to provide pre-defined matplotlib styles, or
+'themes'.
+
+Customizing the look of Matplotlib plots is relatively easy thanks to the [rc
+parameter framework](http://matplotlib.org/users/customizing.html). For
+example, you can easily set the font for your plot using:
+
+    plt.rcParams['font.family'] = 'Georgia'
+
+Note however that you will need to make sure that the font you indicate is
+present in TTF format on your system (which not all default system fonts will
+be). A great resource for free fonts is [Google Web
+Fonts](http://www.google.com/fonts).
+
+The present package leverages the rc parameter framework to provide presets
+that save you time if you want to just get a good looking plot fast.
 
 Contributing
 ------------
