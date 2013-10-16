@@ -60,6 +60,7 @@ Available styles
 The following styles are currently available:
 
 * ``'test'`` - a test style
+* ``'white_on_black'`` - a style for presentations with black backgrounds
 
 This package is under development. We are curerntly working on a set of styles!
 Please also contribute your own! (see *Contributing* above).
