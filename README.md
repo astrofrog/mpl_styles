@@ -1,29 +1,28 @@
 About
 -----
 
-The purpose of this package is to provide pre-defined matplotlib styles, or
-'themes'.
+The purpose of this package is to collect and provide high-quality
+[Matplotlib](http://www.matplotlib.org) styles.
 
-Customizing the look of Matplotlib plots is relatively easy thanks to the [rc
-parameter framework](http://matplotlib.org/users/customizing.html). For
+Customizing the look of Matplotlib plots is relatively easy thanks to the [rc parameter framework](http://matplotlib.org/users/customizing.html). For
 example, you can easily set the font for your plot using:
 
     plt.rcParams['font.family'] = 'Georgia'
 
-Note however that you will need to make sure that the font you indicate is
-present in TTF format on your system (which not all default system fonts will
-be). A great resource for free fonts is [Google Web
-Fonts](http://www.google.com/fonts).
+However, you may have to tweak quite a few such parameters to get a good
+looking plot. The present package leverages the rc parameter framework to
+provide presets that save you time if you want to just get a good looking plot
+fast.
 
-The present package leverages the rc parameter framework to provide presets
-that save you time if you want to just get a good looking plot fast.
+Future versions of Matplotlib will likely include the ability to select such presets (or 'style sheets') - see  [https://github.com/matplotlib/matplotlib/pull/2236](https://github.com/matplotlib/matplotlib/pull/2236). Once this is available, the styles in this repository will be adapted so as to be usable by the new Matplotlib framework.
 
 Contributing
 ------------
 
-Please contribute styles to ``mpl_styles/styles.py``. Simply define a function
-named ``style_<style_name>`` that takes no arguments, and returns a dictionary
-of Matplotlib rc parameter settings.
+The aim of this package is to collaboratively come up with a set of
+high-quality styles. Please contribute styles to ``mpl_styles/styles.py``.
+Simply define a function named ``style_<style_name>`` that takes no arguments,
+and returns a dictionary of Matplotlib rc parameter settings.
 
 Installing
 ----------
@@ -40,7 +39,7 @@ Using styles
 
 You can either set a global style for the rest of the script:
 
-    mpl_styles.style('style_name')
+    mpl_styles.use('style_name')
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
@@ -48,7 +47,7 @@ You can either set a global style for the rest of the script:
 
 or make use of the context manager to temporarily change the style:
 
-    with mpl_styles.style('style_name'):
+    with mpl_styles.use('style_name'):
 
         fig = plt.figure()
         ax = fig.add_subplot(1,1,1)
@@ -69,6 +68,13 @@ The following styles are currently available:
 
 This package is under development. We are curerntly working on a set of styles!
 Please also contribute your own! (see *Contributing* above).
+
+Fonts
+-----
+
+Note that you will need to make sure that fonts that are needed for specific
+styles are present in TTF format on your system (which not all default system
+fonts will be). A great resource for free fonts is [Google Web Fonts](http://www.google.com/fonts).
 
 Other useful helpers
 --------------------

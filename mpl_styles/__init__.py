@@ -15,7 +15,7 @@ def is_style_function(x):
 STYLE_FUNCTIONS = dict((name[6:], func) for name, func in inspect.getmembers(styles, predicate=is_style_function))
 
 
-def style(name):
+def use(name):
     context = rc_context()
     try:
         rcParams.update(STYLE_FUNCTIONS[name]())
