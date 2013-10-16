@@ -20,8 +20,8 @@ version with:
     cd mpl_styles
     python setup.py install
 
-Using
-=====
+Using styles
+============
 
 You can either set a global style for the rest of the script:
 
@@ -38,6 +38,23 @@ or make use of the context manager to temporarily change the style:
         fig = plt.figure()
         ax = fig.add_subplot(1,1,1)
         ...
+
+Other useful helpers
+====================
+
+The default log formatter is Matplotlib is sub-optimal - it returns values such
+as 10^0, 10^1, etc. To use a more sensible log formatter, you can do:
+
+from mpl_styles.formatters import LogFormatterMathtextAuto
+
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.yaxis.set_major_formatter(LogFormatterMathtextAuto())
+    ...
+
+and values between (and including) 0.01 and 100 will be rendered in decimal,
+not exponential notation.
+
 
 Credits
 =======
